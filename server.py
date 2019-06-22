@@ -31,6 +31,14 @@ def create_app():
     def index():
         return render_template('./index.html')
 
+    @app.route('/chart_vien')
+    def index():
+        return render_template('./charts_vien.html')
+
+    @app.route('/chart_baseheer')
+    def index():
+        return render_template('./Indices_Per_Country.html')
+
     @app.route('/data')
     def world_data():
         # Use Pandas to perform the sql query
