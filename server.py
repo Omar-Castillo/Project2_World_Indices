@@ -24,10 +24,6 @@ def create_app():
     app.config['SQLALCHEMY_DATABASE_URI'] = url
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-    #helps with caching
-    app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
-
-
     db = SQLAlchemy(app)
     engine = db.get_engine()
 
@@ -65,6 +61,44 @@ def create_app():
         population_data = pd.read_sql_query('select * from world_population', engine)
         population_data = population_data.to_json(orient='records')
         return jsonify(json.loads(population_data))
+
+    @app.route('/netmigration_data')
+    def netmigration_data():
+        netmigration_data = pd.read_sql_query('select * from world_netmigration', engine)
+
+        #create a list comprehension for the range for values, need to make sure range captures all the years
+        years_columns =[str(x) for x in (range(1960,2018))]
+
+        #using pandas pivot to make better organize our original data
+        netmigration_pivot = pd.pivot_table(netmigration_data, values=years_columns, index= ['Country Name'], columns=["Series Name"])
+
+        # use code below to create new columns that combine multi index
+        final_netcolumns = [' '.join(col).strip() for col in netmigration_pivot.columns.values]
+
+        #set our new table columns to the final columns created above, and set to json
+        netmigration_pivot.columns= final_netcolumns
+
+        netmigration_pivot = netmigration_pivot.reset_index().to_json(orient='records')
+        return jsonify(json.loads(netmigration_pivot))
+
+    @app.route('/gdp_data')
+    def gdp_data():
+        gdp_data = pd.read_sql_query('select * from world_gdp', engine)
+
+        #create a list comprehension for the range for values, need to make sure range captures all the years
+        years_columns =[str(x) for x in (range(1960,2018))]
+
+        #using pandas pivot to make better organize our original data
+        gdp_pivot = pd.pivot_table(gdp_data, values=years_columns, index= ['Country Name'], columns=["Series Name"])
+
+        # use code below to create new columns that combine multi index
+        final_gdpcolumns = [' '.join(col).strip() for col in gdp_pivot.columns.values]
+
+        #set our new table columns to the final columns created above, and set to json
+        gdp_pivot.columns= final_gdpcolumns
+
+        gdp_pivot = gdp_pivot.reset_index().to_json(orient='records')
+        return jsonify(json.loads(gdp_pivot))
 
     return app
 
