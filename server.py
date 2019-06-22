@@ -18,7 +18,7 @@ def create_app():
     app = Flask(
         __name__,
         static_folder='static',
-        static_url_path='',
+        # static_url_path='',
         template_folder='templates'
     )
     app.config['SQLALCHEMY_DATABASE_URI'] = url

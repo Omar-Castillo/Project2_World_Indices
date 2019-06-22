@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Population</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/bootstrap.min.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/styles.css') }}" />
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div id="chart"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- library utility files -->
+
+    <script src="{{ url_for('static', filename = 'libs/lodash.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'libs/rxjs.umd.min.js') }}"></script>
+
+    <!-- d3 library specific files -->
+
+    <script src="{{ url_for('static', filename = 'libs/d3.v5.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'libs/d3-simple-slider.min.js') }}"></script>
+
+    <script src="{{ url_for('static', filename = 'libs/d3-array.v1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'libs/d3-geo.v1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'libs/d3-geo-projection.v2.min.js') }}"></script>
+
+    <script src="{{ url_for('static', filename = 'libs/topojson.js') }}"></script>
+
+    <!-- code files -->
+
+    <script src="{{ url_for('static', filename = 'js/constants.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js/utils.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js/map-chart.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js/sidebar-chart.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js/chart.js') }}"></script>
+
+    <!-- on page load create chart -->
+    <script>
+        window.addEventListener('load', () => { chart.initChart(true); });
+    </script>
+</body>
+</html>
