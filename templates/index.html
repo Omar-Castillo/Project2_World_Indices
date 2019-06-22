@@ -1,18 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Population</title>
-    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="../static/css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css" />
 </head>
+
 <body>
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
                 <div id="chart"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h3>World Population</h3>
+                <a href="https://salty-fjord-75498.herokuapp.com/"><img class="img-responsive"
+                        src="../static/Images/population_chart.png" alt="Population"></a>
+            </div>
+            <div class="col-md-4">
+                <h3>World Immigration</h3>
+                <a href=""><img class="img-responsive" src="../static/Images/Immigration_chart.png"
+                        alt="Immigration"></a>
+            </div>
+            <div class="col-md-4">
+                <h3>World GDP and Life Expectancy</h3>
+                <a href="charts_vien.html"><img class="img-responsive"
+                        src="../static/Images/GDP_and_Life_Expectancy.png" alt="GDP and Life Expectancy"></a>
             </div>
         </div>
     </div>
@@ -40,10 +59,12 @@
     <script src="../static/js/map-chart.js"></script>
     <script src="../static/js/sidebar-chart.js"></script>
     <script src="../static/js/chart.js"></script>
+    <script src="../static/js/chartVien_Json.js"></script>
 
     <!-- on page load create chart -->
     <script>
         window.addEventListener('load', () => { chart.initChart(false); });
     </script>
 </body>
+
 </html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>GDP and Life Expectancy</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+</head>
+
+<body>
+
+	<div class="container">
+		<h1>GDP and Life Expectancy</h1>
+		<div class="row">
+			<div class="col-md-2">
+				<button type="button" onclick="reset()">C</button>
+				<button type="button" onclick="button1960()">1960</button>
+			</div>
+			<div class="col-md-2">
+				<button type="button" onclick="reset()">C</button>
+				<button type="button" onclick="button1980()">1980</button>
+			</div>
+			<div class="col-md-2">
+				<button type="button" onclick="reset()">C</button>
+				<button type="button" onclick="button1990()">1990</button>
+			</div>
+			<div class="col-md-2">
+				<button type="button" onclick="reset()">C</button>
+				<button type="button" onclick="button2000()">2000</button>
+			</div>
+			<div class="col-md-2">
+				<button type="button" onclick="reset()">C</button>
+				<button type="button" onclick="button2010()">2010</button>
+			</div>
+			<div class="col-md-2">
+				<button type="button" onclick="reset()">C</button>
+				<button type="button" onclick="button2017()">2017</button>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-md-12">
+				<p id="year"></p>
+			</div>
+		</div>
+
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="chart" id="chartVien"></div>
+				<p id="note"></p>
+			</div>
+		</div>
+	</div>
+
+	<!-- <script type="text/javascript" src="../static/js/chartVien_CSV.js"></script> -->
+	<script type="text/javascript" src="../static/js/chartVien_Json.js"></script>
+</body>
+
+</html>
