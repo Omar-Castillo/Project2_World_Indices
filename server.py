@@ -35,7 +35,7 @@ def create_app():
     def vien():
         return render_template('./charts_vien.html')
 
-    @app.route('/chart_baseheer')
+    @app.route('/chart_basheer')
     def basheer():
         return render_template('./Indices_Per_Country.html')
 
