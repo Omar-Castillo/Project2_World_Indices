@@ -18,7 +18,7 @@ def create_app():
     app = Flask(
         __name__,
         static_folder='static',
-        static_url_path='',
+        # static_url_path='',
         template_folder='templates'
     )
     app.config['SQLALCHEMY_DATABASE_URI'] = url
@@ -30,6 +30,14 @@ def create_app():
     @app.route('/')
     def index():
         return render_template('./index.html')
+
+    @app.route('/chart_vien')
+    def vien():
+        return render_template('./charts_vien.html')
+
+    @app.route('/chart_basheer')
+    def basheer():
+        return render_template('./Indices_Per_Country.html')
 
     @app.route('/data')
     def world_data():
@@ -106,4 +114,4 @@ def create_app():
 app = create_app()
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
