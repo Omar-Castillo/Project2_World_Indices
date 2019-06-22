@@ -4,4 +4,3 @@ config.py
 # Jupyter Notebook
 .ipynb_checkpoints
 .DS_Store
-world_database_to_heroku.ipynb
