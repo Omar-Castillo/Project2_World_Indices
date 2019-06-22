@@ -1,25 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>World Map</title>
-  <!-- Our CSS -->
-  <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Population</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/styles.css" />
 </head>
-
 <body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div id="chart"></div>
+            </div>
+        </div>
+    </div>
 
-    <!-- The div that holds our map -->
-    <div id="map-id"></div>
-  
-    <!-- D3 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
-    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-    <script src="https://d3js.org/topojson.v2.min.js"></script>
-  
-    <!-- Our JavaScript -->
-    <script src="../static/js/app.js"></script>
+    <!-- library utility files -->
 
-  </body>
-  
-  </html>
+    <script src="../static/libs/lodash.min.js"></script>
+    <script src="../static/libs/rxjs.umd.min.js"></script>
+
+    <!-- d3 library specific files -->
+
+    <script src="../static/libs/d3.v5.min.js"></script>
+    <script src="../static/libs/d3-simple-slider.min.js"></script>
+
+    <script src="../static/libs/d3-array.v1.min.js"></script>
+    <script src="../static/libs/d3-geo.v1.min.js"></script>
+    <script src="../static/libs/d3-geo-projection.v2.min.js"></script>
+
+    <script src="../static/libs/topojson.js"></script>
+
+    <!-- code files -->
+
+    <script src="../static/js/constants.js"></script>
+    <script src="../static/js/utils.js"></script>
+    <script src="../static/js/map-chart.js"></script>
+    <script src="../static/js/sidebar-chart.js"></script>
+    <script src="../static/js/chart.js"></script>
+
+    <!-- on page load create chart -->
+    <script>
+        window.addEventListener('load', () => { chart.initChart(false); });
+    </script>
+</body>
+</html>
