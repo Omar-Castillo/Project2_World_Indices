@@ -110,12 +110,16 @@ function countrynames (data) {
   return all_country_names
 }
 
-///FUNCTION TO BUILD GRAPH
+///FUNCTION TO BUILD GRAPH  
 function buildgraphs(datum) {
   var trace1 = {
     x: datum.Year,
     y: datum.Life,
     fill: 'tozeroy',
+    line: {
+      color: "#2E86C1",
+      width: 3
+    },
     xaxis: 'x1',
     yaxis: 'y1',
     name: 'Life Expectancy (yrs)',
@@ -126,6 +130,10 @@ function buildgraphs(datum) {
     x: datum.Year,
     y: datum.Population,
     fill: 'tozeroy',
+    line: {
+      color: "#48C9B0",
+      width: 3
+    },
     xaxis: 'x2',
     yaxis: 'y2',
     name: 'Population (Mil)',
@@ -136,6 +144,10 @@ function buildgraphs(datum) {
     x: datum.Year,
     y: datum.Migration,
     fill: 'tozeroy',
+    line: {
+      color: "#CCD1D1",
+      width: 3
+    },
     xaxis: 'x3',
     yaxis: 'y3',
     name: 'Net Migration',
