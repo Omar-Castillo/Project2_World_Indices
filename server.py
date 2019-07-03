@@ -39,6 +39,12 @@ def create_app():
     def basheer():
         return render_template('./Indices_Per_Country.html')
 
+    @app.route('/chart_mariam')
+    def mariam():
+       # return render_template('./home.html')
+        return render_template('./mariam_iframe.html')
+
+
     @app.route('/data')
     def world_data():
         # Use Pandas to perform the sql query
